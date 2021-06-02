@@ -13,10 +13,13 @@ namespace Kurs_Final
     class GameStatistic
     {
         public int Score { get; set; }
-        public GameStatistic(int score) { Score = score; }
+        public GameStatistic(int score) 
+        {
+            Score = score; 
+        }
         public virtual void PrintScore()
         { 
-            MessageBox.Show("Score: " + Score); 
+            MessageBox.Show("Game Over\nScore: " + Score); 
         }
        
 

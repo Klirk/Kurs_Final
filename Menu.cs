@@ -15,6 +15,7 @@ namespace Kurs_Final
         public Menu()
         {
             InitializeComponent();
+            Icon = Tetris.Properties.Resources.Icon;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,5 +34,9 @@ namespace Kurs_Final
             Close();
         }
 
+        private void Menu_Load(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

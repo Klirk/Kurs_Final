@@ -269,15 +269,14 @@ namespace Kurs_Final
             {
                 GenNewTile();
             }
-            else
-            {
-
-            }
+            Lost();
 
         }
 
         public void Rest()
         {
+            GameStatistic gameStatistic = new GameStatistic(score);
+            gameStatistic.PrintScore();
             BestScore bestScore = new BestScore(best, score);
             bestScore.PrintScore();
             score = 0;
@@ -293,7 +292,44 @@ namespace Kurs_Final
             GenNewTile();
             
         }
-
+        public void Lost()
+        {
+            int check = 0;
+            int check1 = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    if (tile[i, j].Value == 0)
+                    {
+                        check += 1;
+                        break;
+                    }
+                }
+            }
+            if (check == 0)
+            {
+                for (int i = 1; i < 4; i++)
+                {
+                    for (int j = 0; j < 4; j++)
+                    {
+                        if(tile[i - 1, j].Value == tile[i, j].Value)
+                        {
+                            check1 += 1;
+                        }
+                        else if (tile[j, i - 1].Value == tile[j,i].Value)
+                        {
+                            check1 += 1;
+                        }
+                    }
+                }
+                if (check1 == 0)
+                {
+                    Rest();
+                }
+            }
+           
+        }
         public void GameScore(int score)
         {
             label1.Text = "Score: " + score;
