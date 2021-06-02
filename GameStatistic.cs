@@ -10,31 +10,38 @@ using System.Windows.Forms;
 
 namespace Kurs_Final
 {
-    class GameStatistic
+    abstract class Score
     {
-        public int Score;
-        public GameStatistic(int score) 
+        public int score;
+        public Score(int _score) 
         {
-            Score = score; 
+            score = _score;
         }
-        public virtual void PrintScore()
-        { 
-            MessageBox.Show("Game Over\nScore: " + Score); 
-        }
-       
-
+        public abstract void PrintScore();
     }
-    class BestScore : GameStatistic
+    class CurrentScore : Score
     {
-        private int BestSc;
-        public BestScore(int bestsc, int score) : base(score)
+        public CurrentScore(int _score) : base(_score)
         {
-            BestSc = bestsc;
         }
         public override void PrintScore()
         {
-            base.PrintScore();
-            MessageBox.Show("Score: " + Score + "\nBest Score: " + BestSc);
+            MessageBox.Show("Game over!\nScore: " + score);
+        }
+
+    }
+    class BestScore : Score
+    {
+        private int BestScr;
+        public BestScore(int bestsc, int _score) : base(_score)
+        {
+            BestScr = bestsc;
+        }
+        public override void PrintScore()
+        {
+            CurrentScore current = new CurrentScore(score);
+            current.PrintScore();
+            MessageBox.Show("Score: " + score + "\nBest Score: " + BestScr);
         }
     }
 }
