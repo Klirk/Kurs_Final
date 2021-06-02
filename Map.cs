@@ -275,8 +275,6 @@ namespace Kurs_Final
 
         public void Rest()
         {
-            GameStatistic gameStatistic = new GameStatistic(score);
-            gameStatistic.PrintScore();
             BestScore bestScore = new BestScore(best, score);
             bestScore.PrintScore();
             score = 0;

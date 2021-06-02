@@ -12,7 +12,7 @@ namespace Kurs_Final
 {
     class GameStatistic
     {
-        public int Score { get; set; }
+        public int Score;
         public GameStatistic(int score) 
         {
             Score = score; 
@@ -26,13 +26,14 @@ namespace Kurs_Final
     }
     class BestScore : GameStatistic
     {
-        private int BestSc { get; set; }
+        private int BestSc;
         public BestScore(int bestsc, int score) : base(score)
         {
             BestSc = bestsc;
         }
         public override void PrintScore()
         {
+            base.PrintScore();
             MessageBox.Show("Score: " + Score + "\nBest Score: " + BestSc);
         }
     }
