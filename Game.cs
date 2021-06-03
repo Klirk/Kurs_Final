@@ -17,8 +17,8 @@ namespace Kurs_Final
         {
             InitializeComponent();
             Icon = Tetris.Properties.Resources.Icon;
-            map = new Map();
-            map.Map1(this);
+            map = new Map(this);
+            
         }
         Map map;
         private void Game_Load(object sender, EventArgs e)

@@ -7,31 +7,31 @@
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="Kurs_Final.Score">
-    <Position X="1.75" Y="0.5" Width="1.5" />
+  <Class Name="Kurs_Final.GameScore">
+    <Position X="2" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameStatistic.cs</FileName>
+      <HashCode>AAAAAAAAAAAAABgCAAAIAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameScore.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kurs_Final.CurrentScore">
-    <Position X="0.5" Y="3" Width="1.5" />
+    <Position X="0.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameStatistic.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameScore.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kurs_Final.BestScore">
-    <Position X="3.25" Y="2.75" Width="1.5" />
+    <Position X="3.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>GameStatistic.cs</FileName>
+      <HashCode>AAAAAAAAAAAAAAgCAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>GameScore.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Kurs_Final.Map" Collapsed="true">
     <Position X="7" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAACgAIIAABAAACAIAAAAACAAACAAAAAAAAEAAAA=</HashCode>
+      <HashCode>AAABAACAAIIAABAAACAIAAAAACAAACAAAAAAAAEAAAA=</HashCode>
       <FileName>Map.cs</FileName>
     </TypeIdentifier>
   </Class>

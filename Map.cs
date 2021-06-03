@@ -14,9 +14,9 @@ namespace Kurs_Final
     {
         Label label1 = new Label();
         private Tiles[,] tile = new Tiles[4, 4];
-        private int score = 0;
-        private int best = 0;
-        public void Map1(Form Game)
+        private CurrentScore score;
+        private BestScore best;
+        public Map(Form form)
         {
 
 
@@ -28,15 +28,11 @@ namespace Kurs_Final
                     _map.Location = new Point(15 + 80 * j, 80 + 80 * i);
                     _map.BackColor = Color.Gray;
                     _map.Size = new Size(70, 70);
-                    Game.Controls.Add(_map);
+                    form.Controls.Add(_map);
                 }
             }
-
-            label1.Text = "Score: 0";
-            label1.Font = new Font("Times new Romans", 13, FontStyle.Bold);
-            label1.Location = new Point(12, 9);
-            label1.Size = new Size(150, 30);
-            Game.Controls.Add(label1);
+            score = new CurrentScore(0, form);
+            best = new BestScore(0,0, form);
         }
         public void GenTiles(Form form)
         {
@@ -103,11 +99,9 @@ namespace Kurs_Final
                                         int b = tile[i, l].Value;
                                         if (a == b)
                                         {
-                                            score += a + b;
+                                            Scr(a);
                                             tile[i, l].Value = a * 2;
                                             tile[i, l - 1].Value = 0;
-                                            GameScore(score);
-                                            bestscr(score, best);
                                             Lable -= x;
                                             Check = true;
                                             break;
@@ -149,11 +143,9 @@ namespace Kurs_Final
                                         int b = tile[i, l].Value;
                                         if (a == b)
                                         {
-                                            score += a * 2;
+                                            Scr(a);
                                             tile[i, l].Value = a * 2;
                                             tile[i, l + 1].Value = 0;
-                                            GameScore(score);
-                                            bestscr(score, best);
                                             Lable += x;
                                             Check = true;
                                             break;
@@ -194,11 +186,9 @@ namespace Kurs_Final
                                         int b = tile[l, j].Value;
                                         if (a == b)
                                         {
-                                            score += a * 2;
+                                            Scr(a);
                                             tile[l, j].Value = a * 2;
                                             tile[l + 1, j].Value = 0;
-                                            GameScore(score);
-                                            bestscr(score, best);
                                             Lable += x;
                                             Check = true;
                                             break;
@@ -240,11 +230,9 @@ namespace Kurs_Final
                                         int b = tile[l, j].Value;
                                         if (a == b)
                                         {
-                                            score += a * 2;
+                                            Scr(a);
                                             tile[l, j].Value = a * 2;
                                             tile[l - 1, j].Value = 0;
-                                            GameScore(score);
-                                            bestscr(score, best);
                                             Lable -= x;
                                             Check = true;
                                             break;
@@ -275,9 +263,9 @@ namespace Kurs_Final
 
         public void Rest()
         {
-            BestScore bestScore = new BestScore(best, score);
-            bestScore.PrintScore();
-            score = 0;
+            best.PrintScore();
+            score.Score = 0;
+            
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -285,10 +273,17 @@ namespace Kurs_Final
                     tile[i, j].Value = 0;
                 }
             }
-            GameScore(0);
             GenNewTile();
             GenNewTile();
-            
+        }
+        public void Scr(int a)
+        {
+            score.Score += a * 2;
+            best.score = score.Score;
+            if (best.Score <= score.Score)
+            {
+                best.Score = score.Score;
+            }
         }
         public void Lost()
         {
@@ -327,19 +322,6 @@ namespace Kurs_Final
                 }
             }
            
-        }
-        public void GameScore(int score)
-        {
-            label1.Text = "Score: " + score;
-
-        }
-        public void bestscr(int score, int bestscr)
-        {
-            
-            if(bestscr <= score)
-            {
-                best = score;
-            }
         }
     }
 }

@@ -52,7 +52,7 @@
     <Compile Include="Game.Designer.cs">
       <DependentUpon>Game.cs</DependentUpon>
     </Compile>
-    <Compile Include="GameStatistic.cs" />
+    <Compile Include="GameScore.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Menu.cs">
       <SubType>Form</SubType>
