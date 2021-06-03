@@ -263,8 +263,7 @@ namespace Kurs_Final
 
         public void Rest()
         {
-            score.PrintScore();
-            best.PrintScore();
+            MessageBox.Show("Game Over!\nScore: " + score.PrintScore() + "\nBest score: " + best.PrintScore());
             score.Score = 0;
             for (int i = 0; i < 4; i++)
             {

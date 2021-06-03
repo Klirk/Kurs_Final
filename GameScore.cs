@@ -20,7 +20,7 @@ namespace Kurs_Final
             label.Size = new Size(250, 30);
             score = _score;
         }
-        public abstract void PrintScore();
+        public abstract int PrintScore();
         public abstract int Score { get; set; }
     }
     class CurrentScore : GameScore
@@ -32,9 +32,9 @@ namespace Kurs_Final
             form.Controls.Add(label);
             
         }
-        public override void PrintScore()
+        public override int PrintScore()
         {
-            MessageBox.Show("Game over!\nScore: " + score);
+            return score;
         }
         public override int Score
         {
@@ -57,9 +57,9 @@ namespace Kurs_Final
             label.Location = new Point(12 * 2 + 250, 9);
             form.Controls.Add(label);
         }
-        public override void PrintScore()
+        public override int PrintScore()
         {
-            MessageBox.Show("Your best score: " + this.score);
+            return score;
         }
         public override int Score
         {
@@ -69,7 +69,7 @@ namespace Kurs_Final
             }
             set
             {
-                this.score = value;
+                score = value;
                 label.Text = "Best score: " + score;
             }
         }
