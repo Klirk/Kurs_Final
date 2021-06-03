@@ -263,9 +263,9 @@ namespace Kurs_Final
 
         public void Rest()
         {
+            score.PrintScore();
             best.PrintScore();
             score.Score = 0;
-            
             for (int i = 0; i < 4; i++)
             {
                 for (int j = 0; j < 4; j++)
@@ -279,7 +279,6 @@ namespace Kurs_Final
         public void Scr(int a)
         {
             score.Score += a * 2;
-            best.score = score.Score;
             if (best.Score <= score.Score)
             {
                 best.Score = score.Score;

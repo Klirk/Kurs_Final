@@ -34,7 +34,7 @@ namespace Kurs_Final
         }
         public override void PrintScore()
         {
-            MessageBox.Show("Score: " + score);
+            MessageBox.Show("Game over!\nScore: " + score);
         }
         public override int Score
         {
@@ -51,28 +51,26 @@ namespace Kurs_Final
     }
     class BestScore : GameScore
     {
-        private int BestScr = 0;
         public BestScore(int bestscore, int _score, Form form) : base(_score)
         {
             label.Text = "Best score: 0";
             label.Location = new Point(12 * 2 + 250, 9);
             form.Controls.Add(label);
-            BestScr = bestscore;
         }
         public override void PrintScore()
         {
-            MessageBox.Show("Score: " + score + "\nBest Score: " + BestScr);
+            MessageBox.Show("Your best score: " + this.score +"\nScore: " + base.score);
         }
         public override int Score
         {
             get
             {
-                return BestScr;
+                return score;
             }
             set
             {
-                this.BestScr = value;
-                label.Text = "Best score: " + BestScr;
+                this.score = value;
+                label.Text = "Best score: " + score;
             }
         }
     }
