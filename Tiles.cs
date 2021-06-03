@@ -27,56 +27,46 @@ namespace Kurs_Final
             set
             {
                 numbers.Text = value.ToString();
+                this.value = value;
                 switch (value)
                 {
                     case 0:
                         tile.BackColor = Color.Gray;
                         numbers.Text = "";
-                        this.value = value;
+                        
                         break;
                     case 2:
                         tile.BackColor = Color.LightGray;
-                        this.value = value;
                         break;
                     case 4:
                         tile.BackColor = Color.Yellow;
-                        this.value = value;
                         break;
                     case 8:
                         tile.BackColor = Color.LightYellow;
-                        this.value = value;
                         break;
                     case 16:
                         tile.BackColor = Color.LightPink;
-                        this.value = value;
                         break;
                     case 32:
                         tile.BackColor = Color.DeepPink;
-                        this.value = value;
                         break;
                     case 64:
                         tile.BackColor = Color.LightGreen;
-                        this.value = value;
                         break;
                     case 128:
                         tile.BackColor = Color.Green;
-                        this.value = value;
                         break;
                     case 256:
                         tile.BackColor = Color.LightBlue;
-                        this.value = value;
                         break;
                     case 512:
                         tile.BackColor = Color.Blue;
-                        this.value = value;
                         break;
                     case 1024:
                         tile.BackColor = Color.Coral;
-                        this.value = value;
                         break;
                     case 2048:
                         tile.BackColor = Color.Red;
-                        this.value = value;
                         break;
                 }
             }
