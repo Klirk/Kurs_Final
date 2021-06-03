@@ -59,7 +59,7 @@ namespace Kurs_Final
         }
         public override void PrintScore()
         {
-            MessageBox.Show("Your best score: " + this.score +"\nScore: " + base.score);
+            MessageBox.Show("Your best score: " + this.score);
         }
         public override int Score
         {
