@@ -23,55 +23,5 @@ namespace Kurs_Final
         public abstract int PrintScore();
         public abstract int Score { get; set; }
     }
-    class CurrentScore : GameScore
-    {
-        public CurrentScore(int _score, Form form) : base(_score)
-        {
-            label.Location = new Point(12, 9);
-            label.Text = "Score: 0";
-            form.Controls.Add(label);
-            
-        }
-        public override int PrintScore()
-        {
-            return score;
-        }
-        public override int Score
-        {
-            get
-            {
-                return score;
-            }
-            set
-            {
-                score = value;
-                label.Text = "Score: " + score;
-            }
-        }
-    }
-    class BestScore : GameScore
-    {
-        public BestScore(int bestscore, int _score, Form form) : base(_score)
-        {
-            label.Text = "Best score: 0";
-            label.Location = new Point(12 * 2 + 250, 9);
-            form.Controls.Add(label);
-        }
-        public override int PrintScore()
-        {
-            return score;
-        }
-        public override int Score
-        {
-            get
-            {
-                return score;
-            }
-            set
-            {
-                score = value;
-                label.Text = "Best score: " + score;
-            }
-        }
-    }
+   
 }
